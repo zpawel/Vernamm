@@ -69,7 +69,7 @@ public class VernamaTest {
 
         //then
         Assert.assertEquals(expected.length(), result.length());
-        Assert.assertEquals("ko",result);
+        Assert.assertEquals(expected,result);
 
 
     }
