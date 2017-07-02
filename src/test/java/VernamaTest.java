@@ -2,7 +2,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.*;
 
 
 public class VernamaTest {
@@ -120,6 +120,36 @@ public class VernamaTest {
 
         //then
         Assert.assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    }
+
+    @Test
+    public void duplicateList(){
+        List lista = new LinkedList();
+        lista.add(1);
+        lista.add(1);
+        lista.add(2);
+        lista.add(1);
+        lista.add(2);
+        lista.add(1);
+        lista.add(1);
+        lista.add(3);
+        Set sjadj = new HashSet<>();
+        sjadj.addAll(lista);
+
+        sjadj.forEach(m -> System.out.print(m));
+
+
+        for(int i=0; i<lista.size(); i++){
+            for(int j=i+1; j<lista.size(); j++){
+                if (lista.get(i)== lista.get(j)){
+                    lista.remove(j);
+                    j--;
+                }
+
+            }
+            System.out.println(lista.get(i));
+        }
+
     }
 
 }
